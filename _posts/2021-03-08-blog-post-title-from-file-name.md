@@ -1,32 +1,11 @@
-## Blog Post Title From First Header
+## First Entry
 
-Due to a plugin called `jekyll-titles-from-headings` which is supported by GitHub Pages by default. The above header (in the markdown file) will be automatically used as the pages title.
+Roughly 16 years after blogging became popular (2008), and some years after it fell out of vogue, I'm actually starting my blog!
 
-If the file does not start with a header, then the post title will be derived from the filename.
+A couple of my reasons to blog now.
 
-This is a sample blog post. You can talk about all sorts of fun things here.
+  1. I have some time
+  2. I have some topics to write about (gaming laptops, large scale computing, performance engineering...)
+  3. I've been meaning to do this for *years*
 
----
-
-### This is a header
-
-#### Some T-SQL Code
-
-```tsql
-SELECT This, [Is], A, Code, Block -- Using SSMS style syntax highlighting
-    , REVERSE('abc')
-FROM dbo.SomeTable s
-    CROSS JOIN dbo.OtherTable o;
-```
-
-#### Some PowerShell Code
-
-```powershell
-Write-Host "This is a powershell Code block";
-
-# There are many other languages you can use, but the style has to be loaded first
-
-ForEach ($thing in $things) {
-    Write-Output "It highlights it using the GitHub style"
-}
-```
+So hold onto your hats (if you wear them) and watch me *not* update this for the next several months ;)
