@@ -22,7 +22,11 @@ Had to fix the following diagram due to inaccurate use of Huffman coding (did *n
 ![gzip_diagram](https://github.com/user-attachments/assets/63320ce3-a6dd-4727-8110-f59aabcace55)
 `"each of the next length characters is equal to the characters exactly distance characters behind it in the uncompressed stream“ distance == offset`
 
-sources: https://kinsta.com/blog/enable-gzip-compression/ and https://en.wikipedia.org/wiki/LZ77_and_LZ78
+sources: https://kinsta.com/blog/enable-gzip-compression/
+
+and
+
+https://en.wikipedia.org/wiki/LZ77_and_LZ78
 
 ![image](https://github.com/user-attachments/assets/628e601c-e051-490e-8d97-322084d2421c)
 
@@ -38,16 +42,20 @@ source: http://www.codersnotes.com/notes/elegance-of-deflate/
 * Query over S3/HTTP 1.1 to get byte ranges, avoids downloading and decompressing entire file
 
 #### Limits
-48 bits => ~241 TBs compressed file size that can be indexed
-16 bits => ~65 KBs of uncompressed block
-64KB blocks are padded to that size (fixed ahead of time)
+* 48 bits => ~241 TBs compressed file size that can be indexed
+* 16 bits => ~65 KBs of uncompressed block
+* 64 KiB blocks are padded to that size (fixed ahead of time)
 
 
 ### Tabix Indexing of BGZF
 
 ![tabix_bgzip_visuallized](https://github.com/user-attachments/assets/193bd15c-7edf-4b83-a9ba-2e3af9a424dc)
 
-source: https://www.chipestimate.com/Unzipping-the-GZIP-compression-protocol/Altior/Technical-Article/2010/03/23 and Li, Heng. "Tabix: fast retrieval of sequence features from generic TAB-delimited files." Bioinformatics 27.5 (2011): 718-719.
+source: https://www.chipestimate.com/Unzipping-the-GZIP-compression-protocol/Altior/Technical-Article/2010/03/23 
+
+and 
+
+Li, Heng. "Tabix: fast retrieval of sequence features from generic TAB-delimited files." Bioinformatics 27.5 (2011): 718-719.
 
 #### Binning index for intervals (1D proximity)
 
@@ -57,6 +65,7 @@ Store intervals (lines) in smallest bin that fully encompasses the interval:
 *	Intervals covered by A are in bin 1 (and below)
 *	Intervals covered by B are in bin 4 (and below)
 *	Intervals covered by C are only in bin 20
+  
 Larger intervals can increase # of bins searched: A (8) > B (6) > C (3)
 
 source: Kent, W. James, et al. "The human genome browser at UCSC." Genome research 12.6 (2002): 996-1006.
