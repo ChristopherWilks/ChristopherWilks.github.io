@@ -28,7 +28,6 @@ sources: https://kinsta.com/blog/enable-gzip-compression/ and https://en.wikiped
 
 source: http://www.codersnotes.com/notes/elegance-of-deflate/
 
-
 ### Block-gzip Compressed Files (BGZF)
 
 * block-gzip splits up stream into compressed blocks (64KB per block) for an increase in total compressed size (each block as a header/footer)
@@ -49,3 +48,16 @@ source: http://www.codersnotes.com/notes/elegance-of-deflate/
 ![tabix_bgzip_visuallized](https://github.com/user-attachments/assets/193bd15c-7edf-4b83-a9ba-2e3af9a424dc)
 
 source: https://www.chipestimate.com/Unzipping-the-GZIP-compression-protocol/Altior/Technical-Article/2010/03/23 and Li, Heng. "Tabix: fast retrieval of sequence features from generic TAB-delimited files." Bioinformatics 27.5 (2011): 718-719.
+
+#### Binning index for intervals (1D proximity)
+
+![tabix_binning_index_diagram](https://github.com/user-attachments/assets/1fb805f8-5040-4a6d-a1e0-7eb6e7a3dfb2)
+
+Store intervals (lines) in smallest bin that fully encompasses the interval:
+*	Intervals covered by A are in bin 1 (and below)
+*	Intervals covered by B are in bin 4 (and below)
+*	Intervals covered by C are only in bin 20
+Larger intervals can increase # of bins searched: A (8) > B (6) > C (3)
+
+source: Kent, W. James, et al. "The human genome browser at UCSC." Genome research 12.6 (2002): 996-1006.
+
