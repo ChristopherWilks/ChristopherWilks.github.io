@@ -1,4 +1,4 @@
-## The genius of block-gzip and Tabix for single dimensional indexing
+## The genius of block-gzip and tabix for single dimensional indexing
 
 As a computational biology data scientist (that is a mouthful!), I work extensively with large(ish) genomics and related datasets.
 Much of the time, though not always, these datasets will have a one or more columns that have a genomic region specified, typically in chromosomal coordinates,
@@ -16,9 +16,9 @@ This is due not only to the obvious utility of having a region-based, highly fle
 also due to the fact that this can be easily extended to do single-column non-region indexing.  
 Therefore avoiding the need for the higher cost of moving to a relational database system mainly for its indexing capabilities, which I'm usually loath to do.
 
-### Block GZip
+### Block gzip
 
-Leveraging the almost ubiquitous GZip program, Bob Handsaker and Heng Li designed the block GZip extension, which allowed for [indexing](http://www.htslib.org/doc/#file-formats).
+Leveraging the almost ubiquitous gzip program, Bob Handsaker and Heng Li designed the block GZip extension, which allowed for [indexing](http://www.htslib.org/doc/#file-formats).
 
 `gzip` itself was a front end on the [zlib](https://www.zlib.net/) library which in turn was/is an implementation of the [DEFLATE](https://www.zlib.net/feldspar.html) compression algorithm as [implemented](https://www.gzip.org/) by Jean-loup Gailly and Mark Adler, who also went on to code the highly useful [pigz](https://zlib.net/pigz/) parallel compression version of gzip.
 
