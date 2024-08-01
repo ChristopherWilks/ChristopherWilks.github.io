@@ -16,6 +16,11 @@ This is due not only to the obvious utility of having a region-based, highly fle
 also due to the fact that this can be easily extended to do single-column non-region indexing.  
 Therefore avoiding the need for the higher cost of moving to a relational database system mainly for its indexing capabilities, which I'm usually loath to do.
 
+BGZF (block gzip) + Tabix:
+![image](https://github.com/user-attachments/assets/59c1293b-1a67-4217-8238-ec82f61a3f6a)
+
+source: https://journals.plos.org/ploscompbiol/article/figure?id=10.1371/journal.pcbi.1009524.g001
+
 ### Block GNU Zip Format (BGZF)
 
 Leveraging the almost ubiquitous gzip program, Bob Handsaker and Heng Li designed the block gzip extension, which allowed for [indexing](http://www.htslib.org/doc/#file-formats).
