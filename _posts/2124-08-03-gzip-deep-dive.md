@@ -70,3 +70,9 @@ Larger intervals can increase # of bins searched: A (8) > B (6) > C (3)
 
 source: Kent, W. James, et al. "The human genome browser at UCSC." Genome research 12.6 (2002): 996-1006.
 
+#### Index Jumping vs. Streaming
+
+Don’t always use the index (can ruin cache locality):
+
+![tabix_index_jumping_vs_streaming](https://github.com/user-attachments/assets/ebea7fd3-cae2-4ec8-8aff-c57ad4d63746)
+
