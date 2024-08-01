@@ -24,7 +24,7 @@ Leveraging the almost ubiquitous gzip program, Bob Handsaker and Heng Li designe
 
 If you want to keep going, `DEFLATE` is really the clever combination of *two* compression algorithms, run length encoding (RLE) via [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding), which uses a dictionary.  I may create another post where I dive into the details of this further, but suffice it to say `DEFLATE` is very popular, though somewhat dated now.
 
-Original gzip assumed a continuous stream of compressed content, disallowing for any breaks and thus not able to support random access on the compressed stream (no indexing).  However, BGZF changed this to instead encode the original stream as a series of smaller gzip files or blocks (with both gzip headers and footers) where each gzip file or block would be a set size (64KB or smaller).  This could slightly increase the size of the final gzipped file, but the marginal extra size is offset (no pun intended) by the ability to index and therefore random access different parts of the gzipped file.
+Original gzip assumed a continuous stream of compressed content, disallowing for any breaks and thus not able to support random access on the compressed stream (no indexing).  However, BGZF changed this to instead encode the original stream as a series of smaller gzip files or blocks (with both gzip headers and footers) where each gzip file or block would be a set size (64 KiB or smaller).  This could slightly increase the size of the final gzipped file, but the marginal extra size is offset (no pun intended) by the ability to index and therefore random access different parts of the gzipped file.
 
 ### Indexing via Tabix
 
