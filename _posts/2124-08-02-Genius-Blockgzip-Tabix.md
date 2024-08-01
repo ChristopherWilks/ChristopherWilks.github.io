@@ -20,7 +20,7 @@ Therefore avoiding the need for the higher cost of moving to a relational databa
 
 Leveraging the almost ubiquitous gzip program, Bob Handsaker and Heng Li designed the block gzip extension, which allowed for [indexing](http://www.htslib.org/doc/#file-formats).
 
-`gzip` itself was a front end on the [zlib](https://www.zlib.net/) library which in turn was/is an implementation of the [DEFLATE](https://www.zlib.net/feldspar.html) compression algorithm as [implemented](https://www.gzip.org/) by Jean-loup Gailly and Mark Adler, who also went on to code the highly useful [pigz](https://zlib.net/pigz/) parallel compression version of gzip.
+`gzip` itself was a front end on the [zlib](https://www.zlib.net/) library which in turn was/is an implementation of the [DEFLATE](https://www.zlib.net/feldspar.html) compression algorithm as [implemented](https://www.gzip.org/) by Jean-loup Gailly and Mark Adler, the latter went on to code the highly useful [pigz](https://zlib.net/pigz/) parallel compression version of gzip.
 
 If you want to keep going, `DEFLATE` is really the clever combination of *two* compression algorithms, run length encoding (RLE) via [LZ77](https://en.wikipedia.org/wiki/LZ77_and_LZ78) and [Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding), which uses a dictionary.  I may create another post where I dive into the details of this further, but suffice it to say `DEFLATE` is very popular, though somewhat dated now.
 
